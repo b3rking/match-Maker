@@ -9,7 +9,7 @@ class Encounter
     public const RESULT_WINNER = 1;
     public const RESULT_LOSER = -1;
     public const RESULT_DRAW = 0;
-    public const RESULT_POSSIBILITIES = [RESULT_WINNER, RESULT_LOSER, RESULT_DRAW];
+    public const RESULT_POSSIBILITIES = [self::RESULT_WINNER, self::RESULT_LOSER, self::RESULT_DRAW];
 
 
     public static function probabilityAgainst(int $levelPlayerOne, int $againstLevelPlayerTwo): float
@@ -23,7 +23,7 @@ class Encounter
             trigger_error(sprintf('Invalid result. Expected %s',implode(' or ', self::RESULT_POSSIBILITIES)));
         }
 
-        $levelPlayerOne += (int) (32 * ($playerOneResult - probabilityAgainst($levelPlayerOne, $againstLevelPlayerTwo)));
+        $levelPlayerOne += (int) (32 * ($playerOneResult - self::probabilityAgainst($levelPlayerOne, $againstLevelPlayerTwo)));
     }
 
 }
