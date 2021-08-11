@@ -30,7 +30,7 @@ $jade = 800;
 
 echo sprintf(
     'Greg à %.2f%% chance de gagner face a Jade',
-    probabilityAgainst($greg, $jade)*100
+    $encounter->probabilityAgainst($greg, $jade)*100
 ).PHP_EOL;
 
 $encounter = new Encounter;
